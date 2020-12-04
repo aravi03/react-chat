@@ -111,6 +111,7 @@ export default class chat extends Component {
       
     
       addMessageBox(enter=true){
+        
         let messages = this.state.messages;
         let current_message = this.state.current_message;
         console.log(this.state);
@@ -147,14 +148,21 @@ export default class chat extends Component {
         let enter_pressed = false;
         if(e.key === "Enter"){
           enter_pressed = true;
+          console.log('mail',document.getElementById('mail'));
+
+        // document.getElementById('mail').style.animation="mynewmove 4s 2";;
+        
+
         }
+        
         this.addMessageBox(enter_pressed)
       }
     
       render() {
         return (
             <div>
-            <h1 className='chat-head'>CHAT</h1>
+            <h1 className='chat-head'>CHAT <i id='mail1' class="fa fa-envelope"></i></h1>
+           
           <div className="chat_window">
             <MessagesContainer messages={this.state.messages}></MessagesContainer>
             <div className="bottom_wrapper clearfix">
